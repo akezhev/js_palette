@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fbf2e9;
+}
+
+.task-container {
+  max-width: 700px;
+  margin: 0 auto 30px;
+
+  color: #414042;
+}
+
+.task-title-for-user {
+  margin: 0 0 80px;
+
+  font-size: 20px;
+  text-align: center;
+}
+
+.task-title {
+  text-align: center;
+}
+
+.task-subtitle {
+  margin: 10px 0;
+
+  color: #314976;
+}
+
+.task-descr {
+  margin: 0;
+
+  text-indent: 20px;
+}
+
+.task-list {
+  margin: 10px 0;
+
+  list-style-type: square;
+}
+
+.title {
+  margin: 0 0 20px 0;
+
+  font-size: 22px;
+  text-align: center;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.form__label {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 3px;
+
+  font-weight: 600;
+}
+.err-msg {
+  text-align: right;
+  color: red;
+}
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin: 0 0 15px;
+  font-size: 16px;
+}
+.form__btn {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 16px;
+
+  text-align: center;
+  cursor: pointer;
+  background-color: #e1e1e1;
+}
+
+.all-colors {
+  max-width: 1300px;
+  margin: 50px auto 0 auto;
+}
+.all-colors__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.all-colors__item {
+  padding: 50px;
+
+  text-align: center;
+  background-color: rgb(154, 205, 50);
+}
+.all-colors__item-box {
+  padding: 20px;
+
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.all-colors__item-name {
+  margin: 0 0 5px;
+
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.all-colors__item-type {
+  margin: 0 0 5px;
+}
+.all-colors__item-code {
+  font-weight: 600;
+}

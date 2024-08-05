@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body onload="checkCookie()">
+    <div class="task-container">
+      <h3 class="task-title">
+        Проверка достоверности форм. Использование Cookie
+      </h3>
+      <h4 class="task-subtitle">Задание</h4>
+      <p class="task-descr">
+        Реализовать страницу с палитрой цветов и формой для добавления нового
+        цвета.
+      </p>
+      <p class="task-descr">Один цвет характеризуется:</p>
+      <ul class="task-list">
+        <li class="task-item">уникальным названием;</li>
+        <li class="task-item">типом (RGB, RGBA или HEX);</li>
+        <li class="task-item">кодом цвета.</li>
+      </ul>
+      <p class="task-descr">
+        При нажатии на кнопку Save, необходимо проверять введенные данные по
+        следующим правилам.
+      </p>
+      <h4 class="task-subtitle">Название:</h4>
+      <ul class="task-list">
+        <li class="task-item">обязательное поле;</li>
+        <li class="task-item">
+          нерегистрозависимое уникальное значение (то есть в списке уже
+          существующих цветов не должно быть такого же названия);
+        </li>
+        <li class="task-item">только буквенные символы.</li>
+      </ul>
+      <h4 class="task-subtitle">Тип:</h4>
+      <ul class="task-list">
+        <li class="task-item">
+          выпадающий список из 3-х вариантов: RGB, RGBA, HEX.
+        </li>
+      </ul>
+      <h4 class="task-subtitle">Код цвета:</h4>
+      <ul class="task-list">
+        <li class="task-item">
+          RGB – 3 числа через запятую, каждое число в диапазоне от 0 до 255;
+        </li>
+        <li class="task-item">
+          RGBA – 4 числа через запятую, первые 3 числа в диапазоне от 0 до 255,
+          последнее число от 0 до 1;
+        </li>
+        <li class="task-item">HEX – 6 цифр или букв от A до F (без #).</li>
+      </ul>
+      <p class="task-descr">
+        Если пользователь при заполнении формы ввел некорректные данные, то
+        необходимо отобразить соответствующие ошибки.
+      </p>
+      <p class="task-descr">
+        Необходимо сохранять коллекцию цветов в куки, чтобы при обновлении
+        страницы не потерять данные. Максимальный срок жизни куки – 3 часа
+      </p>
+    </div>
+
+    <h1 class="title">Create new color</h1>
+
+    <form class="form" action="#" id="colorForm" onsubmit="return addColor()">
+      <label class="form__label" for="colorName">
+        Color:
+        <span class="err-msg"></span>
+      </label>
+      <input class="form__input" type="text" name="colorName" id="colorName" />
+
+      <label class="form__label" for="colorType">Type:</label>
+      <select class="form__input" name="colorType" id="colorType" required>
+        <option value="RGB">RGB</option>
+        <option value="RGBA">RGBA</option>
+        <option value="HEX">HEX</option>
+      </select>
+
+      <label class="form__label" for="colorCode">
+        Code:
+        <span class="err-msg"></span>
+      </label>
+      <input class="form__input" type="text" name="colorCode" id="colorCode" />
+
+      <button class="form__btn" type="submit">Save</button>
+    </form>
+
+    <div class="all-colors">
+      <h2 class="title">All colors</h2>
+      <div class="all-colors__inner">
+        <div
+          class="all-colors__item"
+          style="background-color: rgb(154, 205, 50)"
+        >
+          <div class="all-colors__item-box">
+            <h3 class="all-colors__item-name">Yellowgreen</h3>
+            <div class="all-colors__item-type">RGB</div>
+            <span class="all-colors__item-code"> 154, 205, 50 </span>
+          </div>
+        </div>
+        <div
+          class="all-colors__item"
+          style="background-color: rgba(0, 139, 139, 1)"
+        >
+          <div class="all-colors__item-box">
+            <h3 class="all-colors__item-name">Darkcyan</h3>
+            <div class="all-colors__item-type">RGBA</div>
+            <span class="all-colors__item-code"> 0, 139, 139, 1 </span>
+          </div>
+        </div>
+        <div class="all-colors__item" style="background-color: #ff4500">
+          <div class="all-colors__item-box">
+            <h3 class="all-colors__item-name">Orangered</h3>
+            <div class="all-colors__item-type">HEX</div>
+            <span class="all-colors__item-code"> #FF4500 </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
